@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
+import styles from './NavBar.module.css'
+
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav>
       {user ?
-        <ul>
-          <li>Welcome, {user.name}</li>
-          <li><Link to="/profiles">Profiles</Link></li>
-          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          <li><Link to="/changePassword">Change Password</Link></li>
-        </ul>
+        <div className={styles.mainnav}>
+          <div className={styles.techcen}><Link to="/">TECH CENTER</Link></div>
+          <div className={styles.account}><Link to="/account">Account</Link></div>
+          <div className={styles.cart}><Link to="/cart">Cart</Link></div>
+        </div>
+
+        
       :
         <ul>
           <li><Link to="/login">Log In</Link></li>

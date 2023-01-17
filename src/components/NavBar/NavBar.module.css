@@ -1,0 +1,18 @@
+nav {
+    background-color: lightslategrey;
+    display: flex;
+}
+
+.mainnav {
+    
+    display: flex;
+    flex-basis: 100%;
+    background-color: black;
+    
+}
+
+.cart {
+    background-color: red;
+    
+}
+
