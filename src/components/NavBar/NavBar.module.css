@@ -7,12 +7,16 @@ nav {
     
     display: flex;
     flex-basis: 100%;
-    background-color: black;
+    flex-direction: column;
     
 }
 
+.techcen {
+    justify-self: flex-start;
+}
+
 .cart {
-    background-color: red;
-    
+border: 1px solid red; 
+align-self: flex-end;   
 }
 
