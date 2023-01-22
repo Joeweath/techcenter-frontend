@@ -1,66 +1,47 @@
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
-import { useState } from 'react'
-
 
 const NavBar = ({ user, handleLogout }) => {
 
-  const [searchInput, setSearchInput] = useState("");
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-  };
-  
-  
-  const testInput = [
-    { name: "Belgium", continent: "Europe" },
-  { name: "India", continent: "Asia" },
-  { name: "Bolivia", continent: "South America" },
-  { name: "Ghana", continent: "Africa" },
-  { name: "Japan", continent: "Asia" },
-  { name: "Canada", continent: "North America" },
-  { name: "New Zealand", continent: "Australasia" },
-  { name: "Italy", continent: "Europe" },
-  { name: "South Africa", continent: "Africa" },
-  { name: "China", continent: "Asia" },
-  { name: "Paraguay", continent: "South America" },
-  { name: "Usa", continent: "North America" },
-  { name: "France", continent: "Europe" },
-  { name: "Botswana", continent: "Africa" },
-  { name: "Spain", continent: "Europe" },
-  { name: "Senegal", continent: "Africa" },
-  { name: "Brazil", continent: "South America" },
-  { name: "Denmark", continent: "Europe" },
-  { name: "Mexico", continent: "South America" },
-  { name: "Australia", continent: "Australasia" },
-  { name: "Tanzania", continent: "Africa" },
-  { name: "Bangladesh", continent: "Asia" },
-  { name: "Portugal", continent: "Europe" },
-]
-
-
-if (searchInput.length > 0) {
-    testInput.filter((country) => {
-    return country.name.match(searchInput);
-});
-}
   return (
-    <nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       {user ?
-        <div className={styles.mainnav}>
-          <div className={styles.techcen}><Link to="/">TECH CENTER</Link></div>
-          <input type="text"
-          onChange={handleChange}
-          value={searchInput} 
-          />
+        <div class="container-fluid" className={styles.container}>
+          <Link to="/" className={styles.techcen}>TECH CENTER</Link>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div className={styles.search}></div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
           
-          <div className={styles.account}><Link to="/account">Account</Link></div>
-          <div className={styles.cart}><Link to="/cart">Cart</Link></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item">
+              </li>
+              <li class="nav-item dropdown">
+                <Link to="/account" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Account</Link>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></hr></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+
+              </li>
+            </ul>
+          <Link to="/cart" className={styles.cart}>Cart</Link>
+          </div>
         </div>
 
-        
-      :
+
+        :
         <ul>
           <li><Link to="/login">Log In</Link></li>
           <li><Link to="/signup">Sign Up</Link></li>

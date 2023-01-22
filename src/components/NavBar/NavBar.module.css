@@ -1,22 +1,35 @@
-nav {
-    background-color: lightslategrey;
+
+.container {
     display: flex;
+    width: 100%;
 }
 
-.mainnav {
-    
-    display: flex;
-    flex-basis: 100%;
-    flex-direction: column;
-    
-}
 
 .techcen {
-    justify-self: flex-start;
+    text-decoration: none;
+    color: slategray;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.4em;
+    margin-left: 1.7rem;
+}
+
+.search {
+    justify-self: center;
+}
+
+.dropdownbar {
+    border: 1px solid black;
+    justify-self: flex-end;
+}
+
+
+.account {
+   
 }
 
 .cart {
+justify-self: flex-end;
 border: 1px solid red; 
-align-self: flex-end;   
+
 }
 
